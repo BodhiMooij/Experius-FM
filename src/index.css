@@ -1,0 +1,135 @@
+:root {
+  --color__bg: #2d2d2d;
+  --color__header--bg: #585eaa;
+  --color__primary--text: #ffebb9;
+
+  --color__white: #ffffff;
+  --color__primary: #585eaa;
+  --color__primary-lighten: #9ba1f5;
+  --color__cta: #d8433a;
+  --color__cta--darker: #c23c34;
+  --color__secondary: #e37f32;
+  --color__secondary--darker: #cc722d;
+}
+
+@font-face { font-family: Chicago; src: url('assets/fonts/Chicago.woff2'); }
+@font-face { font-family: PerfectDos; src: url('assets/fonts/PerfectDOS.woff2'); }
+@font-face { font-family: Chicago; src: url('assets/fonts/Chicago.ttf'); }
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 12px;
+  font-family: "Chicago", sans-serif;
+  background: var(--color__bg);
+  color: var(--color__primary--text);
+}
+
+:not(input):not(textarea) {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+aside, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+aside, header, ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+li {
+  padding: 0 .5em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+li img {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+aside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.item {
+  height: 100%;
+  line-height: 20px;
+  padding: 0 6px;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--color__primary--text);
+}
+
+#app {
+  position: relative;
+}
+
+.loader-background {
+  margin: 0 auto;
+  width: fit-content;
+  font-size: 16px;
+  /*font-family: PerfectDos;*/
+  position: relative;
+}
+
+.blinker {
+  -webkit-animation: blink-animation 1s steps(2,start) infinite;
+  animation: blink-animation 1s steps(2,start) infinite;
+  position: absolute;
+  top: 85px;
+  left: 70px;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden
+  }
+}
+
+header {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  background: var(--color__header--bg);
+  height: 20px;
+  border-bottom: 1px solid #000;
+  justify-content: space-between;
+  transition: background .1s ease-in-out;
+  transition-delay: .5s;
+}
+
+@media (max-width: 650px) {
+  .mobile-hide {
+    display: none;
+  }
+}
